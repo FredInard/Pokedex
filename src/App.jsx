@@ -13,6 +13,7 @@ const pokemonList = [
   },
   {
     name: "mew",
+
   },
 ];
 
