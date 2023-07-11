@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from "./components/PokemonCard"
+import NavBar from './components/navbar';
 
 
 const pokemonList = [
@@ -34,22 +33,22 @@ const pokemonList = [
 function App() {
   const [count, setCount] = useState(0);
 
-  const handleClickAdd = () => {
-   if (count<pokemonList.length - 1){
-    setCount(count + 1)
-  }
-  else {
-    console.log("il y a bien un précédent")
-  }
-  }
+  // const handleClickAdd = () => {
+  //  if (count<pokemonList.length - 1){
+  //   setCount(count + 1)
+  // }
+  // else {
+  //   console.log("il y a bien un précédent")
+  // }
+  // }
 
-  const handleClick = () => {
-    if (count>0) {
-    setCount(count - 1)
-  }else {
-    console.log("il y a bien un suivant")
-  }
-  }
+  // const handleClick = () => {
+  //   if (count>0) {
+  //   setCount(count - 1)
+  // }else {
+  //   console.log("il y a bien un suivant")
+  // }
+  // }
 
   return (
     <>
@@ -57,10 +56,13 @@ function App() {
         <PokemonCard pokemon={pokemonList[count]}/>
       </div>
       <div>
+        <NavBar count={count} setCount={setCount} pokemonList={pokemonList}/>
+      </div>
+      {/* <div>
         <p>{count}</p>
         <button onClick={handleClick}>Précédent</button>
         <button onClick={handleClickAdd}>Suivant</button>
-      </div>
+      </div> */}
     </>
   )
 }
